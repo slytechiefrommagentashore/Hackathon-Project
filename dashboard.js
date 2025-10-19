@@ -13,29 +13,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   const exportBtn = document.getElementById('export-csv');
 
   // ---GEMINI API FUNCTION ---
-  async function callGemini(prompt, apiKey) {
-   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-    const body = {
-      contents: [{ parts: [{ text: prompt }] }]
-    };
+async function callGemini(prompt, apiKey) {
+  const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+  const body = {
+    contents: [{ parts: [{ text: prompt }] }]
+  };
 
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
+  try {
+    const response = await fetch(GEMINI_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      return data.candidates[0].content.parts[0].text;
-    } catch (error) {
-      console.error('Error calling Gemini API:', error);
-      return 'Error: Could not get AI response.';
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+
+    const data = await response.json();
+    return data.candidates[0].content.parts[0].text;
+  } catch (error) {
+    console.error('Error calling Gemini API:', error);
+    return 'Error: Could not get AI response.';
   }
+}
+
 
   async function handleAIPrep(event) {
     const index = event.target.dataset.index;

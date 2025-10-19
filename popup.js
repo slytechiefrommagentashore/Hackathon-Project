@@ -138,8 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     generatedAnswerArea.value = 'Generating...';
     generateAnswerBtn.disabled = true;
 
-    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${profile.apiKey}`;
-
+    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${profile.apiKey}`;
 
     const prompt = `Based on my resume below, answer the following job application question. Keep the answer professional, concise, and tailored to the question.
 
