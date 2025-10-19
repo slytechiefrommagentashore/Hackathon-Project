@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <title>Application Tracker</title>
+  <link rel="icon" href="icons/icon16.png">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  
+  <div class="container">
+    <!-- Header Section -->
+    <div id="header-section">
+      <div class="logo-title">
+        <img src="icons/icon48.png" alt="Job Genie Logo" class="logo">
+        <h1>Job Genie</h1>
+      </div>
+      <div id="auth-section" class="auth-container">
+        <button id="login-btn">Login / Sign Up</button>
+        <div id="user-profile" style="display: none;">
+          <span class="welcome-message">Hi, <span id="user-display-name"></span>!</span>
+          <button id="dashboard-btn" class="secondary-btn">Dashboard</button>
+          <button id="logout-btn" class="secondary-btn">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content: Shown only on login -->
+    <div id="main-content" style="display: none;">
+      <!-- Tab navigation -->
+      <div class="tabs">
+        <button class="tab-link active" data-tab="track-tab">Track</button>
+        <button class="tab-link" data-tab="ai-tab">AI Genie</button>
+        <button class="tab-link" data-tab="profile-tab">Profile</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="track-tab" class="tab-content active">
+        <div class="card">
+          <h3>Track New Application</h3>
+          <button id="autofill-btn" type="button">Auto-fill from Page</button>
+          <form id="app-form">
+            <input type="text" id="company-name" placeholder="Company Name" required>
+            <input type="text" id="position-title" placeholder="Position Title" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <input type="url" id="company-website" placeholder="Company Website URL" required>
+            <button type="submit">Save Application</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="ai-tab" class="tab-content">
+        <div class="card">
+          <h3>AI Answer Generator</h3>
+          <textarea id="question-input" placeholder="Paste a question from the application..."></textarea>
+          <button id="generate-answer-btn">Generate Answer</button>
+          <textarea id="generated-answer" readonly placeholder="Your AI-generated answer will appear here..."></textarea>
+        </div>
+      </div>
+
+      <div id="profile-tab" class="tab-content">
+        <div class="card">
+          <h3>Profile & Settings</h3>
+          <input type="password" id="gemini-api-key" placeholder="Enter your Gemini API Key">
+          <textarea id="resume-text" placeholder="Paste your resume text here..."></textarea>
+          <button id="save-profile-btn">Save Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="auth0-spa-js.production.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Job Genie",
+  "version": "1.0",
+  "description": "Track job applications and auto-fill from the page.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    },
+    "default_popup": "popup.html"
+  },
+"permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dashboard.html", "profile.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src https://slytechie.us.auth0.com/ https://generativelanguage.googleapis.com/;"
+  }
+}

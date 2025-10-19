@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <title>Job Genie! - My Dashboard</title>
+  <link rel="icon" href="icons/icon16.png">
+  <link rel="stylesheet" href="popup.css">
+<style>
+    /* Define colors and fonts */
+    :root {
+      --primary-color: #483D8B;
+      --accent-color: #00C9A7;
+      --text-light: #6C757D;
+      --bg-light: #F8F9FA;
+      --border-color: #E0E0E0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #ffff;
+      width: 100%; 
+      padding: 0;    
+    }
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary-color);
+    }
+    
+    /* New Dashboard Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding: 5px 15px;
+      background-color: var(--bg-light);
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .logo-title h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .logo {
+      width: 28px;
+      height: 28px;
+    }
+    .auth-container {
+      text-align: right;
+    }
+    .auth-container .welcome-message {
+      font-size: 12px;
+      color: var(--text-light);
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .auth-container .secondary-btn {
+      width: auto;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-left: 5px;
+      background-color: var(--text-light);
+      border-radius: 5px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    
+    /* Main Content Area */
+    .dashboard-content {
+      padding: 2em 2em;
+    }
+    
+    .dashboard-list .app-tools .website-link {
+      font-size: 12px;
+      padding: 5px 8px;
+      margin-left: 5px;
+      background-color: var(--text-light);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+<header class="header" id="header-section">
+    <div class="logo-title">
+      <img src="icons/icon48.png" alt="Job Genie Logo" class="logo">
+      <h1>Job Genie</h1>
+    </div>
+    <div id="auth-section" class="auth-container">
+      <div id="user-profile" style="display: none;">
+        <span class="welcome-message">Hi, <span id="user-display-name"></span>!</span>
+        <button id="logout-btn" class="secondary-btn">Logout</button>
+        <button id="profile-settings-btn" class="secondary-btn">Profile Settings</button>
+      </div>
+    </div>
+  </header>
+
+<div class="dashboard-content">
+  <h1>My Saved Applications</h1>
+  <ul id="app-list" class="dashboard-list"><li>Loading applications...</li></ul>
+  <button id="export-csv">Export to CSV</button>
+</div>
+  <script src="auth0-spa-js.production.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

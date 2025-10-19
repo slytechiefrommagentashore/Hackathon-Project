@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <title>Job Genie - Profile Settings</title>
+  <link rel="icon" href="icons/icon16.png">
+  <link rel="stylesheet" href="popup.css">
+  <style>
+    body {
+      width: 100%;
+    }
+
+    #header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E0E0E0;
+      padding: 5px 15px;
+      background-color: #F8F9FA;
+    }
+    #main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh; 
+    }
+    #main-content .card {
+      border: none; 
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+      width: 100%; /* Allow the card to grow */
+      max-width: 800px; /* But not get too wide on large screens */
+    }
+    textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+  </style>
+</head>
+<body>
+  <header class="header" id="header-section">
+    <div class="logo-title">
+      <img src="icons/icon48.png" alt="Job Genie Logo" class="logo">
+      <h1>Job Genie</h1>
+    </div>
+    <div id="auth-section" class="auth-container">
+      <div id="user-profile" style="display: none;">
+        <span class="welcome-message">Hi, <span id="user-display-name"></span>!</span>
+        <button id="dashboard-btn" class="secondary-btn">Dashboard</button>
+        <button id="logout-btn" class="secondary-btn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="main-content">
+      <div class="card">
+        <h3>Profile & Settings</h3>
+        <h2>Gemini API Key</h2>
+        <input type="password" id="gemini-api-key" placeholder="Enter your Gemini API Key">
+        <h2>Your latest uploaded Resume</h2>
+        <textarea id="resume-text" placeholder="Paste your resume text here..."></textarea>
+        <button id="save-profile-btn">Save Profile</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="config.js"></script>
+  <script src="auth0-spa-js.production.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+
+:root {
+  --primary-color: #483D8B;
+  --accent-color: #00C9A7;  
+  --bg-light: #F8F9FA;      
+  --text-dark: #212529;
+  --text-light: #6C757D;
+  --border-color: #E0E0E0;
+  --success-color: #28a745;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  width: 380px;
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+  color: var(--text-dark);
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px; /* Add spacing between buttons */
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* --- Button Variations --- */
+button.secondary-btn {
+  background-color: var(--text-light);
+}
+#autofill-btn {
+  background-color: var(--success-color);
+}
+#generate-answer-btn {
+  background-color: var(--accent-color);
+}
+
+/* --- Form Elements --- */
+input[type="text"],
+input[type="url"],
+input[type="password"],
+textarea {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+textarea#generated-answer {
+  background-color: #f4f4f4; 
+}
+
+/* --- Main Layout --- */
+.container {
+  padding: 15px;
+}
+
+/* --- Header Section --- */
+#header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 5px 15px;
+  background-color: var(--bg-light);
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-title h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+}
+
+.auth-container {
+  text-align: right;
+}
+
+.auth-container #login-btn {
+  width: auto;
+  padding: 8px 12px;
+}
+
+.auth-container .welcome-message {
+  font-size: 12px;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.auth-container .secondary-btn {
+  width: auto;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* --- Card Layout --- */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.card h3 {
+  margin-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* --- Tab Layout --- */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-link {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  width: auto;
+  margin-bottom: -1px; /* Align with the container border */
+}
+
+.tab-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.card h3 {
+  margin-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* --- Dashboard --- */
+.dashboard-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  list-style-type: none;
+}
+
+.dashboard-list .app-tools {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.dashboard-list .app-tools button {
+  font-size: 12px;
+  padding: 5px 8px;
+  margin-left: 5px;
+  width: auto;
+}
+
+.dashboard-list .app-tools .ai-prep-btn {
+  background-color: var(--primary-color);
+}
+
+.dashboard-list .app-tools .ai-score-btn {
+  background-color: var(--accent-color);
+}
+
+.dashboard-list .app-tools .website-link {
+  font-size: 12px;
+  padding: 5px 8px;
+  background-color: var(--text-light);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-list .app-details .app-status {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-left: 10px;
+}
+
+.dashboard-list .app-tools .delete-btn {
+  background-color: #dc3545; /* A standard red for delete actions */
+}
+
+.dashboard-list .app-tools .delete-btn:hover {
+  background-color: #c82333;
+}
+
+.dashboard-list .app-tools .status-select {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  padding: 5px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+/* --- Fix for Header Buttons --- */
+#user-profile .secondary-btn {
+  width: auto;           /* Stop them from being 100% wide */
+  display: inline-block; /* Allow them to sit side-by-side */
+  margin-left: 5px;      /* Add a little space between them */
+}
+
+/* Optional: Make the welcome text align better */
+#user-profile .welcome-message {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
