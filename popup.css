@@ -261,5 +261,6 @@ textarea#generated-answer {
   display: none;
 }
 .tab-content.active {
-  display: block;
+  display: flex;
 }
+
